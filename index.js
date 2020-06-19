@@ -1,6 +1,21 @@
 /* Packages */
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Structures, Client } = require('discord.js');
+Structures.extend('Guild', Guild => {
+	class MusicGuild extends Guild {
+		constructor(client, data){
+			super(client, data);
+			
+			this.musicData = {
+				queue: [],
+				isPlaying: false,
+				nowPlaying: null,
+				songDispatcher: null
+			};
+		}
+	}
+	return MusicGuild;
+});
+const client = new Client();
 const fs = require('fs');
 const Enmap = require('enmap');
 
@@ -33,5 +48,4 @@ fs.readdir("./commands/", (err, files) => {
     });
 });
 
-// Enter your bot token inside the ' ' below
-client.login('');
+client.login('insert bot ID here');

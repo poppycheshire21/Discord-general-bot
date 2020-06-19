@@ -13,7 +13,7 @@ const member = message.guild.member(user);
 
 const embed = new MessageEmbed()
     .setColor("RANDOM")
-    .setThumbnail(message.author.avatarURL())
+    .setThumbnail(user.displayAvatarURL())
     .addField(`${user.tag}`, `${user}`, true)
     .addField("ID:", `${user.id}`, true)
     .addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
