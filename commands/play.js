@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const Youtube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const youtube = new Youtube('insert youtube API here');
+const youtube = new Youtube('Enter youtube API');
 
 exports.run = async (client, message, args) => {
     function playSong(queue, message){
