@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-        const embed = new Discord.MessageEmbed()
+        const helpEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle('A list of my commands!')
             .setDescription('This is a list of all my commands to help you, remember my prefix is `>`. Most of my commands are only for staff!')
@@ -22,5 +22,8 @@ module.exports.run = async (bot, message, args) => {
             .addField("avatar", "Gets a users avatar!", true)
             .addField("music", "Lists all music commands!", true)
             .setTimestamp()
-        message.channel.send({embed});
+            message.author.send({ embed: helpEmbed });
+
+        message.reply(`The help list has been sent to your dm's! :incoming_envelope:`);
+
 }

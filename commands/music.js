@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-        const embed = new Discord.MessageEmbed()
+        const musicEmbed = new Discord.MessageEmbed()
             .setColor('#FF0000')
             .setTitle('A list of my music commands!')
             .setDescription('This is a list of all my music commands for everyone to use! Remember my prefix is `>`. To use these commands you **must** be in the music VC.')
@@ -17,5 +17,7 @@ module.exports.run = async (bot, message, args) => {
             .addField("pause", "Pauses music!", true)
             .addField("resume", "Resumes music!", true)
             .setTimestamp()
-        message.channel.send({embed});
+            message.author.send({ embed: musicEmbed });
+
+        message.reply(`The music list has been sent to your dm's! :incoming_envelope:`);
 }
